@@ -4,10 +4,11 @@ import time
 import urllib
 from dbhelper import DBHelper
 import datetime
+import os
 
 db = DBHelper()
 
-TOKEN = "Insert Your Bot Token Here"
+TOKEN = os.environ['TOKEN']
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
