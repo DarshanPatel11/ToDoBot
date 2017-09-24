@@ -53,7 +53,7 @@ def handle_updates(updates):
                 send_message("Delete Item Properly.", chat)
             else:
                 items = db.get_items(chat)
-                if not items:
+                if items == []:
                     send_message("Nothing to Delete.", chat)
                     break
                 if t[1] in items[0]:
@@ -68,7 +68,7 @@ def handle_updates(updates):
             send_message(message, chat)
         elif text == "/show":
             items = db.get_items(chat)
-            if not items:
+            if items == []:
                 send_message("Nothing to show.", chat)
             for i in range(len(items)):
                 message = items[i][0] + " " + items[i][1]
@@ -76,7 +76,7 @@ def handle_updates(updates):
         elif text == "/due":
             items = db.get_items(chat)
             due = [0 for _ in range(0, len(items))]
-            if not items:
+            if items == []:
                 send_message("Nothing to show.", chat)
             today = datetime.datetime.today().strftime("%d-%m-%Y")
             for i in range(0, len(items)):
