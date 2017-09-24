@@ -7,7 +7,7 @@ import datetime
 
 db = DBHelper()
 
-TOKEN = "408483282:AAG5ASzp_wHcoFn52FUjLZ6rlR2p_oGaYtg"
+TOKEN = "Insert Your Bot Token Here"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
