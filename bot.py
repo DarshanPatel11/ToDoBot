@@ -55,8 +55,7 @@ def handle_updates(updates):
                 items = db.get_items(chat)
                 if items == []:
                     send_message("Nothing to Delete.", chat)
-                    break
-                if t[1] in items[0]:
+                elif t[1] in items[0]:
                     db.delete_item(t[1], chat)
                     send_message("Item " + t[1] + " Deleted Successfully.", chat)
                 else:
